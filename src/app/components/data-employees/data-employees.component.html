@@ -1,1 +1,44 @@
-<p>data-employees works!</p>
+<div class="main-content mt-3">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-primary" type="submit">Buscar</button>
+    </form>
+  </div>
+</div>
+<div class="main-content mt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header">
+            <h4 class="card-title text-warning">Registros</h4>
+          </div>
+              <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class="text-primary">
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Departamento</th>
+                        <th>Cumpleaños</th>
+                        <th>Fecha de ingreso</th>
+                      </thead>
+                      <tbody *ngFor="let employee of employees">
+                        <tr class="text-primary">
+                          <td>{{ employee.id }}</td>
+                          <td>{{ employee.nombre }}</td>
+                          <td>{{ employee.departamento }}</td>
+                          <td>{{ employee.cumpleanios }}</td>
+                          <td>{{ employee.ingreso }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+

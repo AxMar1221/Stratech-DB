@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-data-employees',
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataEmployeesComponent implements OnInit {
 
-  constructor() { }
+  employees: any[]=[];
+
+  constructor( private databaseService: DatabaseService ) {
+
+    this.databaseService.getEmployees()
+    .subscribe( (data: any) => {
+      // console.log(data)
+      this.employees = data;
+    })
+  }
 
   ngOnInit(): void {
   }
