@@ -1,0 +1,77 @@
+<div class="container mt-5">
+    <h4>Nuevo <small> registro </small></h4>
+    <hr>
+    <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()">
+      <div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Nombre</label>
+          <div class="col">
+            <input class="form-control"
+            type="text"
+            placeholder="Nombre"
+            formControlName="name"
+            [class.is-invalid]="nameNoValid">
+          <small *ngIf="nameNoValid" class="text-danger">
+            Ingrese nombre completo
+          </small>
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Departamento</label>
+          <div class="col">
+            <input class="form-control"
+            type="text"
+            placeholder="Departamento"
+            formControlName="office"
+            [class.is-invalid]="officeNoValid">
+            <small *ngIf="officeNoValid" class="text-danger">
+              Ingrese nombre completo del departamento
+            </small>
+          </div>
+        </div>
+      </div>
+    <br>
+    <div class="form-group row" formGroupName="dates">
+      <label class="col-2 col-form-label">Cumpleaños</label>
+        <div class="form-row col">
+          <div class="col">
+            <input class="form-control"
+            type="date"
+            placeholder="Cumpleaños"
+            formControlName="birthday"
+            [class.is-invalid]="birthdayNoValid">
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row" formGroupName="dates">
+      <label class="col-2 col-form-label">Fecha de ingreso</label>
+        <div class="form-row col">
+          <div class="col">
+            <input class="form-control"
+            type="date"
+            placeholder="Fecha de ingreso"
+            formControlName="admission"
+            [class.is-invalid]="admissionNoValid">
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">&nbsp;</label>
+      <div class="input-group col-md-8">
+        <button type="submit" class="btn btn-outline-primary" style="margin: 10px">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </form>
+  <!-- <pre>
+    Estado del formulario: {{ form.valid }}
+    Status {{ form.status }}
+  </pre>
+  <pre>
+      {{ form.value | json }}
+  </pre>
+  </div> -->

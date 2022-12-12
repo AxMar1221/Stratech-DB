@@ -14,28 +14,41 @@
           <div class="card-header card-header">
             <h4 class="card-title text-warning">Registros</h4>
           </div>
-              <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead class="text-primary">
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Departamento</th>
-                        <th>Cumpleaños</th>
-                        <th>Fecha de ingreso</th>
-                      </thead>
-                      <tbody *ngFor="let employee of employees">
-                        <tr class="text-primary">
-                          <td>{{ employee.id }}</td>
-                          <td>{{ employee.nombre }}</td>
-                          <td>{{ employee.departamento }}</td>
-                          <td>{{ employee.cumpleanios }}</td>
-                          <td>{{ employee.ingreso }}</td>
-                        </tr>
-                      </tbody>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <app-loading *ngIf="loading"></app-loading>
+                <thead class="text-primary">
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Departamento</th>
+                            <th>Cumpleaños</th>
+                            <th>Fecha de ingreso</th>
+                        </thead>
+                        <tbody *ngFor="let employee of employees">
+                            <tr class="text-primary">
+                                <td>{{ employee.id }}</td>
+                                <td>{{ employee.nombre }}</td>
+                                <td>{{ employee.departamento }}</td>
+                                <td>{{ employee.cumpleanios }}</td>
+                                <td>{{ employee.ingreso }}</td>
+                            </tr>
+                        </tbody>
                     </table>
-                  </div>
-              </div>
+                </div>
+            </div>
+            <div>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
     </div>
